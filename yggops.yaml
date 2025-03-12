@@ -13,7 +13,6 @@ projects:
     options:
       script: |
         install -m 644 yggops.yaml /etc/yggops/config.yaml &&
-        install -m 644 gitea.env /etc/yggops/gitea.env &&
         (sleep 1; systemctl restart yggops) &
 
   - type: docker_compose
@@ -25,5 +24,5 @@ projects:
       provider: generic
       secret: my_secret
     options:
-      env-file: /etc/yggops/gitea.env
+      env-file: /var/lib/yggops/repositories/yggops-demo/gitea.env
       build: false
