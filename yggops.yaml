@@ -8,6 +8,7 @@ projects:
       provider: github
       secret: my_secret
       events:
+        - ping
         - push
     options:
       script: |
