@@ -9,10 +9,10 @@ projects:
       provider: github
       secret: my_secret
       events:
-        - ping
         - push
     options:
       script: |
+        echo Hello, world!;
         install -m 644 yggops.yaml /etc/yggops/config.yaml &&
         (sleep 1; systemctl restart yggops) &
 
