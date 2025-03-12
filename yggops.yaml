@@ -2,7 +2,7 @@ updateFrequency: 5m
 privateKeyPath: /root/.ssh/id_ed25519
 projects:
   - type: shell
-    repository: https://github.com/plaffitt/yggops-demo.git
+    repository: git@github.com:plaffitt/yggops-demo.git
     updateFrequency: 1h
     webhook:
       provider: github
@@ -16,7 +16,7 @@ projects:
 
   - type: docker_compose
     name: gitea-postgres
-    repository: https://github.com/ruanbekker/awesome-docker-compose.git
+    repository: git@github.com:docker/awesome-compose.git
     updateFrequency: 1m
     options:
       env-file: /etc/yggops/gitea.env
