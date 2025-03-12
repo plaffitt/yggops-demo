@@ -1,0 +1,15 @@
+updateInterval: 5m
+privateKeyPath: /root/.ssh/id_ed25519
+listen: :3000
+
+projects:
+  - name: hello-world
+    type: docker-compose
+    repository: git@github.com:YOUR_NAME/YOUR_REPO_NAME.git
+    updateInterval: 1h
+    webhook:
+      provider: github
+      secret: HELLO-WORLD-SECRET
+    options:
+      env-file: /etc/yggops/hello-world.env
+      build: true
