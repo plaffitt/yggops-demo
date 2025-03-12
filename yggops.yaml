@@ -18,6 +18,7 @@ projects:
   - type: docker_compose
     name: gitea-postgres
     repository: git@github.com:docker/awesome-compose.git
+    branch: master
     updateFrequency: 1m
     options:
       env-file: /etc/yggops/gitea.env
