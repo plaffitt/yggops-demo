@@ -12,7 +12,8 @@ projects:
         - push
     options:
       script: |
-        install -m 644 yggops.yaml /etc/yggops/config.yaml;
+        install -m 644 yggops.yaml /etc/yggops/config.yaml &&
+        install -m 644 gitea.env /etc/yggops/gitea.env &&
         (sleep 1; systemctl restart yggops) &
 
   - type: docker_compose
