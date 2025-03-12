@@ -20,6 +20,9 @@ projects:
     repository: git@github.com:docker/awesome-compose.git
     branch: master
     updateFrequency: 1m
+    webhook:
+      provider: generic
+      secret: my_secret
     options:
       env-file: /etc/yggops/gitea.env
       build: false
