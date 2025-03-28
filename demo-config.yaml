@@ -15,15 +15,18 @@ projects:
     name: hello-world
     repository: REPLACE_WITH_YOUR_REPOSITORY_URL
     branch: master
-    updateInterval: 1m
+    updateInterval: 1h
+    webhook:
+      provider: github
+      secret: foobar
     options:
       env-file: /etc/yggops/hello-world.env
       build: false
 
-  - type: shell
-    name: hello-world
-    repository: REPLACE_WITH_YOUR_REPOSITORY_URL
-    branch: master
-    updateInterval: 1m
-    options:
-      script: cp *.env /etc/yggops/
+  # - type: shell
+  #   name: hello-world
+  #   repository: REPLACE_WITH_YOUR_REPOSITORY_URL
+  #   branch: master
+  #   updateInterval: 1m
+  #   options:
+  #     script: cp *.env /etc/yggops/

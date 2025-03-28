@@ -2,6 +2,7 @@
 
 - install docker <https://docs.docker.com/engine/install/>
 - install yggops
+- setup webhook
 
 Don't forget to edit the demo-config.yaml file to match your environment.
 
