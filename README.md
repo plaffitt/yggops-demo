@@ -1,20 +1,17 @@
 # yggops-demo
 
-```bash
-sudo -i
+After successfully installing the YggOps service, you can apply the example configuration file and look at the logs to see the service running.
 
-# after running this command, don't forget to add the public key to your github/gitlab account
-ssh-keygen -t ed25519
+```shell
+# copy the example configuration file to the correct location
+cp ./demo-config.yaml /etc/yggops/config.yaml
 
-git clone https://github.com/plaffitt/yggops.git
-cd yggops
+# copy the env file used in the docker-compose plugin in the defined location
+cp ./gitea.env /etc/yggops/
 
-make build install
-
-# you can make sure that the service is running by running the following command
-journalctl -u yggops -f
-
-cat /etc/yggops/config.yaml
-curl https://raw.githubusercontent.com/plaffitt/yggops-demo/refs/heads/main/yggops.yaml > /etc/yggops/config.yaml
+# restart the service and follow the logs
 systemctl restart yggops
+journalctl -u yggops -f
 ```
+
+Once the reconciliation done, you should be able to access your gitea instance at `http://<server_url>:3000`. If you type `docker ps`, you will also see gitea containers running.
