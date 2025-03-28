@@ -1,12 +1,29 @@
 updateInterval: 5m
 privateKeyPath: /root/.ssh/id_ed25519
 listen: :3333
+
 projects:
-  - type: docker_compose
+  - type: docker-compose
     name: gitea-postgres
     repository: git@github.com:docker/awesome-compose.git
     branch: master
-    updateInterval: 1m
     options:
       env-file: /etc/yggops/gitea.env
       build: false
+
+  - type: docker-compose
+    name: hello-world
+    repository: REPLACE_WITH_YOUR_REPOSITORY_URL
+    branch: master
+    updateInterval: 1m
+    options:
+      env-file: /etc/yggops/hello-world.env
+      build: false
+
+  - type: shell
+    name: hello-world
+    repository: REPLACE_WITH_YOUR_REPOSITORY_URL
+    branch: master
+    updateInterval: 1m
+    options:
+      script: cp *.env /etc/yggops/
